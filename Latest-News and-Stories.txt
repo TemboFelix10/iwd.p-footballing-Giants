@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Football Latest News</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    #news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .news-item {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+
+    .news-item:hover {
+      transform: scale(1.02);
+    }
+
+    .news-item h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .news-item p {
+      font-size: 14px;
+      color: #333333;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Footballing Giants - Latest News</h1>
+  </header>
+
+  <main role="main">
+    <section id="news-container">
+      <!-- News items will be inserted here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Footballing Giants</p>
+  </footer>
+
+  <script>
+    const newsData = [
+      {
+        title: "Real Madrid Reach Champions League Final",
+        story: "Real Madrid defeated Bayern Munich to book their place in the 2025 UEFA Champions League final."
+      },
+      {
+        title: "Messi Scores a Brace for Argentina",
+        story: "Lionel Messi led Argentina to victory with two brilliant goals in their latest World Cup qualifier."
+      },
+      {
+        title: "Premier League Title Race Heats Up",
+        story: "Manchester City and Arsenal are neck and neck as the Premier League enters its final weeks."
+      },
+      {
+        title: "Osimhen Linked With Chelsea Move",
+        story: "Victor Osimhen is rumored to be close to a big-money move to the Premier League."
+      }
+    ];
+
+    const container = document.getElementById('news-container');
+
+    newsData.forEach(news => {
+      const div = document.createElement('div');
+      div.className = 'news-item';
+      div.innerHTML = `
+        <h2>${news.title}</h2>
+        <p>${news.story}</p>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Football Latest News</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    #news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .news-item {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+
+    .news-item:hover {
+      transform: scale(1.02);
+    }
+
+    .news-item h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .news-item p {
+      font-size: 14px;
+      color: #333333;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Footballing Giants - Latest News</h1>
+  </header>
+
+  <main role="main">
+    <section id="news-container">
+      <!-- News items will be inserted here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Footballing Giants</p>
+  </footer>
+
+  <script>
+    const newsData = [
+      {
+        title: "Real Madrid Reach Champions League Final",
+        story: "Real Madrid defeated Bayern Munich to book their place in the 2025 UEFA Champions League final."
+      },
+      {
+        title: "Messi Scores a Brace for Argentina",
+        story: "Lionel Messi led Argentina to victory with two brilliant goals in their latest World Cup qualifier."
+      },
+      {
+        title: "Premier League Title Race Heats Up",
+        story: "Manchester City and Arsenal are neck and neck as the Premier League enters its final weeks."
+      },
+      {
+        title: "Osimhen Linked With Chelsea Move",
+        story: "Victor Osimhen is rumored to be close to a big-money move to the Premier League."
+      }
+    ];
+
+    const container = document.getElementById('news-container');
+
+    newsData.forEach(news => {
+      const div = document.createElement('div');
+      div.className = 'news-item';
+      div.innerHTML = `
+        <h2>${news.title}</h2>
+        <p>${news.story}</p>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zambian Super League Fixtures</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1e2a78;
+      margin-bottom: 30px;
+    }
+
+    .fixture-table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .fixture-table thead {
+      background-color: #1e2a78;
+      color: white;
+    }
+
+    .fixture-table th, .fixture-table td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .fixture-table tbody tr:hover {
+      background-color: #f1f5fb;
+    }
+
+    .team {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .team img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .date {
+      color: #555;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Zambian Super League Fixtures</h1>
+
+  <table class="fixture-table" id="fixtures">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Home Team</th>
+        <th>Match</th>
+        <th>Away Team</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Fixtures inserted via JavaScript -->
+    </tbody>
+  </table>
+
+  <script>
+    
+    const fixtures = [
+  {
+    date: "2025-07-01",
+    homeTeam: { name: "ZESCO United", logo: "https://ui-avatars.com/api/?name=ZESCO+United&background=1e2a78&color=fff&size=24" },
+    awayTeam: { name: "Nkana FC", logo: "https://ui-avatars.com/api/?name=Nkana+FC&background=1e2a78&color=fff&size=24" }
+  },
+  {
+    date: "2025-07-02",
+    homeTeam: { name: "Red Arrows", logo: "https://ui-avatars.com/api/?name=Red+Arrows&background=1e2a78&color=fff&size=24" },
+    awayTeam: { name: "Green Buffaloes", logo: "https://ui-avatars.com/api/?name=Green+Buffaloes&background=1e2a78&color=fff&size=24" }
+  },
+  {
+    date: "2025-07-03",
+    homeTeam: { name: "Power Dynamos", logo: "https://ui-avatars.com/api/?name=Power+Dynamos&background=1e2a78&color=fff&size=24" },
+    awayTeam: { name: "NAPSA Stars", logo: "https://ui-avatars.com/api/?name=NAPSA+Stars&background=1e2a78&color=fff&size=24" }
+  },
+  {
+    date: "2025-07-04",
+    homeTeam: { name: "Forest Rangers", logo: "https://ui-avatars.com/api/?name=Forest+Rangers&background=1e2a78&color=fff&size=24" },
+    awayTeam: { name: "Green Eagles", logo: "https://ui-avatars.com/api/?name=Green+Eagles&background=1e2a78&color=fff&size=24" }
+  },
+  {
+    date: "2025-07-05",
+    homeTeam: { name: "Kabwe Warriors", logo: "https://ui-avatars.com/api/?name=Kabwe+Warriors&background=1e2a78&color=fff&size=24" },
+    awayTeam: { name: "Buildcon FC", logo: "https://ui-avatars.com/api/?name=Buildcon+FC&background=1e2a78&color=fff&size=24" }
+  },
+  {
+    date: "2025-07-06",
+    homeTeam: { name: "Zanaco FC", logo: "https://ui-avatars.com/api/?name=Zanaco+FC&background=1e2a78&color=fff&size=24" },
+    awayTeam: { name: "Lumwana Radiants", logo: "https://ui-avatars.com/api/?name=Lumwana+Radiants&background=1e2a78&color=fff&size=24" }
+  },
+  {
+    date: "2025-07-07",
+    homeTeam: { name: "Chambishi FC", logo: "https://ui-avatars.com/api/?name=Chambishi+FC&background=1e2a78&color=fff&size=24" },
+    awayTeam: { name: "Mutondo Stars", logo: "https://ui-avatars.com/api/?name=Mutondo+Stars&background=1e2a78&color=fff&size=24" }
+  },
+  {
+    date: "2025-07-08",
+    homeTeam: { name: "Nkwazi FC", logo: "https://ui-avatars.com/api/?name=Nkwazi+FC&background=1e2a78&color=fff&size=24" },
+    awayTeam: { name: "Konkola Blades", logo: "https://ui-avatars.com/api/?name=Konkola+Blades&background=1e2a78&color=fff&size=24" }
+  },
+  {
+    date: "2025-07-09",
+    homeTeam: { name: "Trident FC", logo: "https://ui-avatars.com/api/?name=Trident+FC&background=1e2a78&color=fff&size=24" },
+    awayTeam: { name: "Prison Leopards", logo: "https://ui-avatars.com/api/?name=Prison+Leopards&background=1e2a78&color=fff&size=24" }
+  },
+  {
+    date: "2025-07-10",
+    homeTeam: { name: "Indeni FC", logo: "https://ui-avatars.com/api/?name=Indeni+FC&background=1e2a78&color=fff&size=24" },
+    awayTeam: { name: "Maestro United", logo: "https://ui-avatars.com/api/?name=Maestro+United&background=1e2a78&color=fff&size=24" }
+  }
+];
+
+
+    function loadFixtures() {
+      const tbody = document.querySelector("#fixtures tbody");
+      tbody.innerHTML = "";
+
+      fixtures.forEach(match => {
+        const tr = document.createElement("tr");
+
+        const dateObj = new Date(match.date);
+        const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+        const formattedDate = dateObj.toLocaleDateString('en-GB', options);
+
+        tr.innerHTML = `
+          <td class="date">${formattedDate}</td>
+          <td class="team">
+            <img src="${match.homeTeam.logo}" alt="${match.homeTeam.name} logo" />
+            <span>${match.homeTeam.name}</span>
+          </td>
+          <td><strong>vs</strong></td>
+          <td class="team">
+            <img src="${match.awayTeam.logo}" alt="${match.awayTeam.name} logo" />
+            <span>${match.awayTeam.name}</span>
+          </td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    loadFixtures();
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple AI Math Calculator</title>
+  <style>
+    /* style.css */
+body {
+  font-family: Arial, sans-serif;
+  background: #2e3f58;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  background: rgb(41, 2, 104);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#answer {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>AI Math Calculator</h2>
+    <input type="text" id="question" placeholder="Ask a math question...">
+    <button onclick="solve()">Calculate</button>
+    <div id="answer"></div>
+  </div>
+
+  <script >
+    // script.js
+function solve() {
+  const input = document.getElementById("question").value;
+  const output = document.getElementById("answer");
+
+  try {
+    // Basic cleaning to prevent code injection
+    const cleanInput = input.replace(/[^-()\d/*+.]/g, '');
+    const result = eval(cleanInput);
+
+    output.textContent = `Answer: ${result}`;
+  } catch (error) {
+    output.textContent = "Sorry, I couldn't understand that.";
+  }
+}
+
+  </script>
+</body>
+</html>

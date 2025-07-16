@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zambian Super League Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1e2a78;
+      margin-bottom: 30px;
+    }
+
+    .fixture-table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .fixture-table thead {
+      background-color: #1e2a78;
+      color: white;
+    }
+
+    .fixture-table th, .fixture-table td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .fixture-table tbody tr:hover {
+      background-color: #f1f5fb;
+    }
+
+    .team {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .team img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .date {
+      color: #555;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Zambian Super League Results</h1>
+
+  <table class="fixture-table" id="results">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Home Team</th>
+        <th>Score</th>
+        <th>Away Team</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Results inserted via JavaScript -->
+    </tbody>
+  </table>
+
+  <script>  
+       const results = [
+  {
+    date: "2025-05-20",
+    homeTeam: {
+      name: "ZESCO United",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Zesco_United_F.C._logo.png/40px-Zesco_United_F.C._logo.png"
+    },
+    score: "2 - 1",
+    awayTeam: {
+      name: "Nkana FC",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/1/19/Nkana_F.C._logo.png/40px-Nkana_F.C._logo.png"
+    }
+  },
+  {
+    date: "2025-05-21",
+    homeTeam: {
+      name: "Red Arrows",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Red_Arrows_F.C._logo.png/40px-Red_Arrows_F.C._logo.png"
+    },
+    score: "1 - 0",
+    awayTeam: {
+      name: "Green Buffaloes",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Green_Buffaloes_F.C._logo.png/40px-Green_Buffaloes_F.C._logo.png"
+    }
+  },
+  {
+    date: "2025-05-22",
+    homeTeam: {
+      name: "Power Dynamos",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Power_Dynamos_F.C._logo.png/40px-Power_Dynamos_F.C._logo.png"
+    },
+    score: "3 - 2",
+    awayTeam: {
+      name: "NAPSA Stars",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/NAPSA_Stars_F.C._logo.png/40px-NAPSA_Stars_F.C._logo.png"
+    }
+  },
+  {
+    date: "2025-05-23",
+    homeTeam: {
+      name: "Forest Rangers",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/Forest_Rangers_F.C._logo.png/40px-Forest_Rangers_F.C._logo.png"
+    },
+    score: "0 - 0",
+    awayTeam: {
+      name: "Green Eagles",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Green_Eagles_F.C._logo.png/40px-Green_Eagles_F.C._logo.png"
+    }
+  },
+  {
+    date: "2025-05-24",
+    homeTeam: {
+      name: "Kabwe Warriors",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Kabwe_Warriors_F.C._logo.png/40px-Kabwe_Warriors_F.C._logo.png"
+    },
+    score: "1 - 1",
+    awayTeam: {
+      name: "Buildcon FC",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Buildcon_F.C._logo.png/40px-Buildcon_F.C._logo.png"
+    }
+  },
+  {
+    date: "2025-05-25",
+    homeTeam: {
+      name: "Zanaco FC",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Zanaco_F.C._logo.png/40px-Zanaco_F.C._logo.png"
+    },
+    score: "2 - 0",
+    awayTeam: {
+      name: "Lumwana Radiants",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Lumwana_Radiants_F.C._logo.png/40px-Lumwana_Radiants_F.C._logo.png"
+    }
+  },
+  {
+    date: "2025-05-26",
+    homeTeam: {
+      name: "Chambishi FC",
+      logo: "https://ui-avatars.com/api/?name=Chambishi+FC&background=0D8ABC&color=fff"
+    },
+    score: "0 - 3",
+    awayTeam: {
+      name: "Mutondo Stars",
+      logo: "https://ui-avatars.com/api/?name=Mutondo+Stars&background=0D8ABC&color=fff"
+    }
+  },
+  {
+    date: "2025-05-27",
+    homeTeam: {
+      name: "Nkwazi FC",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fe/Nkwazi_F.C._logo.png/40px-Nkwazi_F.C._logo.png"
+    },
+    score: "1 - 2",
+    awayTeam: {
+      name: "Konkola Blades",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/Konkola_Blades_F.C._logo.png/40px-Konkola_Blades_F.C._logo.png"
+    }
+  },
+  {
+    date: "2025-05-28",
+    homeTeam: {
+      name: "Trident FC",
+      logo: "https://ui-avatars.com/api/?name=Trident+FC&background=0D8ABC&color=fff"
+    },
+    score: "0 - 1",
+    awayTeam: {
+      name: "Prison Leopards",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Prison_Leopards_F.C._logo.png/40px-Prison_Leopards_F.C._logo.png"
+    }
+  },
+  {
+    date: "2025-05-29",
+    homeTeam: {
+      name: "Indeni FC",
+      logo: "https://ui-avatars.com/api/?name=Indeni+FC&background=0D8ABC&color=fff"
+    },
+    score: "1 - 1",
+    awayTeam: {
+      name: "Maestro United",
+      logo: "https://ui-avatars.com/api/?name=Maestro+United&background=0D8ABC&color=fff"
+    }
+  }
+];
+
+
+    function loadResults() {
+      const tbody = document.querySelector("#results tbody");
+      tbody.innerHTML = "";
+
+      results.forEach(result => {
+        const tr = document.createElement("tr");
+
+        const dateObj = new Date(result.date);
+        const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+        const formattedDate = dateObj.toLocaleDateString('en-GB', options);
+
+        tr.innerHTML = `
+          <td class="date">${formattedDate}</td>
+          <td class="team">
+            <img src="${result.homeTeam.logo}" alt="${result.homeTeam.name} logo" />
+            <span>${result.homeTeam.name}</span>
+          </td>
+          <td><strong>${result.score}</strong></td>
+          <td class="team">
+            <img src="${result.awayTeam.logo}" alt="${result.awayTeam.name} logo" />
+            <span>${result.awayTeam.name}</span>
+          </td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    loadResults();
+  </script>
+</body>
+</html>

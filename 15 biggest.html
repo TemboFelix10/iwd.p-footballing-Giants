@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zambian Football Clubs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #searchInput {
+      display: block;
+      margin: 0 auto 20px auto;
+      padding: 10px;
+      width: 60%;
+      max-width: 400px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 220px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      max-width: 80px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #555;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .card ul li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Zambian Football Clubs</h1>
+  <input type="text" id="searchInput" placeholder="Search by club name or city..." />
+
+  <div class="container" id="clubContainer"></div>
+
+  <script>
+    const clubs = [   
+  {
+    name: "ZESCO United",
+    country: "Zambia",
+    logo: "https://upload.wikimedia.org/wikipedia/en/b/b1/ZESCO_United_FC_logo.png",
+    avatar: "http://www.zesco.co.zm/assets/images/stadium.jpg",
+    achievements: ["9x Zambian Super League Champions", "ABSA Cup Winners", "CAF Champions League Quarter-finalists"]
+  },
+  {
+    name: "Red Arrows",
+    country: "Zambia",
+    logo: "https://upload.wikimedia.org/wikipedia/en/4/4d/Red_Arrows_F.C._logo.png",
+    avatar: "http://zambiareports.com/wp-content/uploads/2022/07/red-arrows.jpg",
+    achievements: ["2x Zambian Super League Champions", "2022 Super League Champions", "ZAF Sponsored Team"]
+  },
+  {
+    name: "Nkana FC",
+    country: "Zambia",
+    logo: "https://upload.wikimedia.org/wikipedia/en/1/13/Nkana_F.C._logo.png",
+    avatar: "http://zambianfootball.co.zm/wp-content/uploads/2020/08/Nkana-players.jpg",
+    achievements: ["13x Zambian Super League Champions", "1x CAF Champions League Finalist (1990)"]
+  },
+  {
+    name: "Green Buffaloes",
+    country: "Zambia",
+    logo: "https://upload.wikimedia.org/wikipedia/en/f/f2/Green_Buffaloes_F.C._logo.png",
+    avatar: "http://zambianfootball.co.zm/wp-content/uploads/2021/06/Green-Buffaloes.jpg",
+    achievements: ["Multiple-time Zambian Cup Winners", "Zambia Army Sponsored Team"]
+  },
+  {
+    name: "Power Dynamos",
+    country: "Zambia",
+    logo: "https://upload.wikimedia.org/wikipedia/en/3/30/Power_Dynamos_F.C._logo.png",
+    avatar: "http://www.mwebantu.com/wp-content/uploads/2023/05/Power-Dynamos.jpg",
+    achievements: ["8x Zambian Super League Champions", "1991 CAF Cup Winners"]
+  },
+  {
+    name: "NAPSA Stars",
+    country: "Zambia",
+    logo: "https://upload.wikimedia.org/wikipedia/en/9/90/NAPSA_Stars_FC_logo.png",
+    avatar: "http://www.lusakatimes.com/wp-content/uploads/2022/05/Napsa-Stars.jpg",
+    achievements: ["ABSA Cup Winners", "Promoted to Super League 2022", "Public Sector Sponsored"]
+  },
+  {
+    name: "Kabwe Warriors",
+    country: "Zambia",
+    logo: "https://upload.wikimedia.org/wikipedia/en/c/c9/Kabwe_Warriors_F.C._logo.png",
+    avatar: "http://daily-mail.co.zm/wp-content/uploads/2021/08/kabwe-warriors-players.jpg",
+    achievements: ["5x Zambian Super League Champions", "1x Zambian Cup Winners"]
+  },
+  {
+    name: "Green Eagles",
+    country: "Zambia",
+    logo: "https://upload.wikimedia.org/wikipedia/en/e/e5/Green_Eagles_F.C._logo.png",
+    avatar: "http://zambianfootball.co.zm/wp-content/uploads/2020/02/Green-Eagles.jpg",
+    achievements: ["CAF Confederation Cup appearances", "Top 4 League Finishes"]
+  },
+  {
+    name: "Forest Rangers",
+    country: "Zambia",
+    logo: "https://upload.wikimedia.org/wikipedia/en/8/8e/Forest_Rangers_F.C._logo.png",
+    avatar: "http://www.znbc.co.zm/news/wp-content/uploads/2020/08/forest-rangers.jpg",
+    achievements: ["CAF Champions League 2020 appearance", "2nd Place in Super League 2020"]
+  },
+  {
+    name: "Buildcon FC",
+    country: "Zambia",
+    logo: "https://upload.wikimedia.org/wikipedia/en/1/1e/Buildcon_F.C._logo.png",
+    avatar: "http://zambianfootball.co.zm/wp-content/uploads/2019/09/Buildcon-FC.jpg",
+    achievements: ["Top flight debut in 2017", "Multiple Top 6 Finishes"]
+  }
+];
+    const clubContainer = document.getElementById("clubContainer");
+    const searchInput = document.getElementById("searchInput");
+
+    function renderClubs(filteredClubs) {
+      clubContainer.innerHTML = "";
+      filteredClubs.forEach(club => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img src="${club.logo}" alt="${club.name} Logo" />
+          <h3>${club.name}</h3>
+          <p>${club.country}</p>
+          <ul>
+            ${club.achievements.map(a => `<li>${a}</li>`).join('')}
+          </ul>
+        `;
+        clubContainer.appendChild(card);
+      });
+    }
+
+    renderClubs(clubs);
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      const filtered = clubs.filter(club =>
+        club.name.toLowerCase().includes(query) ||
+        club.country.toLowerCase().includes(query)
+      );
+      renderClubs(filtered);
+    });
+  </script>
+</body>
+</html>

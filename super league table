@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zambia Super League Table 2024/25</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f9f9f9;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+  </style>
+</head>
+<body>
+  <h1>Zambia Super League 2024/25 - Final Table</h1>
+  <table id="leagueTable">
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Team</th>
+        <th>Played</th>
+        <th>Wins</th>
+        <th>Draws</th>
+        <th>Losses</th>
+        <th>Goals For</th>
+        <th>Goals Against</th>
+        <th>GD</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+  <script>
+    const leagueData = [
+  [1, "Power Dynamos", 34, 20, 8, 6, 54, 22, "+32", 68],
+  [2, "ZESCO United", 34, 17, 12, 5, 34, 20, "+14", 63],
+  [3, "Nkana", 34, 16, 10, 8, 48, 29, "+19", 58],
+  [4, "Red Arrows", 34, 15, 11, 8, 32, 24, "+8", 56],
+  [5, "Kabwe Warriors", 34, 13, 12, 9, 38, 27, "+11", 51],
+  [6, "Nkwazi", 34, 12, 14, 8, 31, 26, "+5", 50],
+  [7, "Green Buffaloes", 34, 11, 12, 11, 34, 35, "-1", 45],
+  [8, "Mufulira Wanderers", 34, 13, 6, 15, 30, 31, "-1", 45],
+  [9, "NAPSA Stars", 34, 9, 17, 8, 24, 22, "+2", 44],
+  [10, "MUZA FC", 34, 9, 12, 13, 26, 29, "-3", 39],
+  [11, "Green Eagles", 34, 8, 12, 14, 28, 29, "-1", 36],
+  [12, "Nchanga Rangers", 34, 7, 12, 15, 25, 27, "-2", 33],
+  [13, "Mutondo Stars", 34, 8, 9, 17, 24, 38, "-14", 33],
+  [14, "Zanaco", 34, 7, 11, 16, 22, 36, "-14", 32],
+  [15, "Manchester United Zambia Academy", 34, 7, 10, 17, 21, 37, "-16", 31],
+  [16, "Forest Rangers", 34, 6, 11, 17, 20, 40, "-20", 29],
+  [17, "Indeni", 34, 5, 9, 20, 18, 45, "-27", 24],
+  [18, "Lumwana Radiants", 34, 4, 8, 22, 15, 50, "-35", 20],
+];
+
+const tableBody = document.getElementById("tableBody");
+
+leagueData.forEach(row => {
+  const tr = document.createElement("tr");
+  row.forEach(cell => {
+    const td = document.createElement("td");
+    td.textContent = cell;
+    tr.appendChild(td);
+  });
+  tableBody.appendChild(tr);
+});
+
+  </script>
+</body>
+</html>

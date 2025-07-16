@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Footballing Giants</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e7e0e7; 
+      color: blue;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: orange;
+      padding: 10px;
+    }
+
+    .navbar ul {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .navbar ul li {
+      margin: 0 15px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #651af1;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    #slide-img {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .team-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .team {
+      background-color: lightblue;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .team img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .team h2 {
+      font-size: 1.2em;
+      margin: 10px 0;
+      color: navy;
+    }
+
+    section h1 {
+      margin-top: 40px;
+      font-size: 2em;
+      color: darkblue;
+    }
+
+    #contacts {
+      background-color: #f7f7f7;
+      padding: 30px 20px;
+    }
+
+    .contact-info ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-info ul li {
+      margin: 2px 0;
+    }
+
+    .contact-form {
+      margin-top: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, textarea {
+      width: 20%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+      background-color: orange;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      width: 5%;
+    }
+
+    footer {
+      background-color: orange;
+      color: beige;
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+
+         .team img {
+        height: 180px;
+      }
+    }
+
+    /* News Styling */
+    #news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .news-item {
+      background-color: #0e9938;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+
+    .news-item:hover { 
+      transform: scale(1.02);
+    }
+
+    .news-item h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .news-item p {
+      font-size: 14px;
+      color: #333333;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="fixtures.html">Fixtures</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+      <li><a href="mtn.superleague news">Headlines & News</a></li>
+      <li><a href="15 biggest.html">Biggest-Footballing-Giants</a></li>
+      <li><a href="super-league-table.html">Super League Table</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Welcome to Footballing Giants</h1>
+    <p>The ultimate platform for football lovers across the country.</p>
+
+     
+    <section class="home-page">
+      <h1>Top Club Teams</h1>
+      <div class="team-list">
+        <div class="team">
+          <img src="c:\Users\Abraham Phiri\Desktop\iwd.p\images\WhatsApp Image 2025-05-26 at 11.39.11_68758aa2.jpg" alt="ZESCO United" />
+          <h2>ZESCO United</h2>
+        </div>
+        <div class="team">
+          <img src="c:\Users\Abraham Phiri\Desktop\iwd.p\images\WhatsApp Image 2025-05-27 at 15.15.21_0b8fdf21.jpg" alt="Nkana FC" />
+          <h2>Nkana FC</h2>
+        </div>
+        <div class="team">
+          <img src="c:\Users\Abraham Phiri\Desktop\iwd.p\images\WhatsApp Image 2025-05-28 at 16.10.17_7330a3ea.jpg" alt="Red Arrows" />
+          <h2>Red Arrows</h2>
+        </div>
+        <div class="team">
+          <img src="c:\Users\Abraham Phiri\Desktop\iwd.p\images\WhatsApp Image 2025-05-28 at 16.10.18_8092954c.jpg" alt="Power Dynamos" />
+          <h2>Power Dynamos</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="national-teams-page">
+      <h1>Other Competitive Teams</h1>
+      <div class="team-list">
+        <div class="team">
+          <img src="c:\Users\Abraham Phiri\Desktop\iwd.p\images\WhatsApp Image 2025-05-26 at 11.39.10_ccb0e216.jpg" alt="Green Buffaloes" />
+          <h2>Green Buffaloes</h2>
+        </div>
+        <div class="team">
+          <img src="c:\Users\Abraham Phiri\Desktop\iwd.p\images\WhatsApp Image 2025-05-28 at 16.10.18_13feab62.jpg" alt="NAPSA Stars" />
+          <h2>NAPSA Stars</h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="news-container"></section>
+
+    <section id="contacts">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:fitelfkt15@gmail.com">fitelfkt15@gmail.com</a></li>
+          <li><strong>Phone:</strong> 0767894791 / 0976092360 / 0953451588</li>
+          <li><strong>Address:</strong> FKT123 Chalala Munyaule, Lusaka, Zambia</li>
+        </ul>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <form method="POST" action="#">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <input type="submit" value="Send" />
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Footballing Giants. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // News section
+    const newsData = [
+      {
+        title: "Power Dynamos clinch their 8th super league trophy",
+        story: "Dynamos are league champions once again 2024/25..."
+      },
+      {
+        title: "Nkana FC has been punished heavily",
+        story: "Most Nkana FC players have been fined at least K10,000.00 ..."
+      },
+       {
+        title: "Nkana FC are super league heavy weights",
+        story: "With the most league titles 13..."
+      }
+    ];
+
+    const container = document.getElementById('news-container');
+    newsData.forEach(news => {
+      const div = document.createElement('div');
+      div.className = 'news-item';
+      div.innerHTML = `<h2>${news.title}</h2><p>${news.story}</p>`;
+      container.appendChild(div);
+    });
+
+    // Slideshow
+    const images = [
+      'images/zanafc.jpg',
+      'images/redarrows.jpg',
+      'images/zesco.jpg',
+      'images/powerdynamos.jpg',
+      'images/greenbuffaloes.jpg',
+      'images/napstars.jpg',
+      'images/forest.jpg',
+      'images/greenEagles.jpg',
+      'images/mufulira.jpg'
+    ];
+
+    let currentImageIndex = 0;
+
+    function changeImage() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      document.getElementById('slide-img').src = images[currentImageIndex];
+    }
+
+    setInterval(changeImage, 2000);
+  </script>
+</body>
+</html>
+
+
+
